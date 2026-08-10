@@ -1,0 +1,20 @@
+# Sem o nível de andar e sem o nível de dispositivo: área → entidade, direto,
+# restrito aos domínios que fazem sentido dizer em voz alta.
+type: custom:mw-voice-assistant-explorer-card
+title: O que a Letícia enxerga
+root: area
+show_devices: false
+show_diagnostic: false
+domains:
+  - light
+  - switch
+  - fan
+  - cover
+  - climate
+  - humidifier
+  - lock
+  - media_player
+  - scene
+  - script
+  - sensor
+  - binary_sensor

@@ -1,0 +1,8 @@
+# Faxina: mostra só o que ainda NÃO está exposto, sem diagnóstico e sem
+# entidades ocultas — a lista encolhe para o que interessa decidir.
+type: custom:mw-voice-assistant-explorer-card
+title: Falta expor
+filter: unexposed
+show_diagnostic: false
+expand_all: true
+height: 80vh

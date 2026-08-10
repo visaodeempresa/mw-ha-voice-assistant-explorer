@@ -1,0 +1,9 @@
+# A tela inteira, do jeito que ela nasceu: uma view em modo painel.
+# Cole em Configurações › Dashboards › (novo dashboard) › editor de YAML.
+views:
+  - title: Assistentes de voz
+    path: vozes
+    type: panel
+    cards:
+      - type: custom:mw-voice-assistant-explorer-card
+        title: Assistentes de voz
