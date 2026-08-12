@@ -712,7 +712,7 @@
       // sem duplicados, preservando a ordem
       const seen = new Set();
       const aliases = clean.filter((a) => {
-        const k = a === null ? " " : norm(a);
+        const k = a === null ? "\u0000" : norm(a);
         if (seen.has(k)) return false;
         seen.add(k);
         return true;
