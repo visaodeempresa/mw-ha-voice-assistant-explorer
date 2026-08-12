@@ -63,7 +63,7 @@ jobs:
         run: |
           set -euo pipefail
           NEXT=${{ steps.ver.outputs.next }}
-          CUR=$(grep -oE 'const VERSION = "[0-9]+\.[0-9]+\.[0-9]+"' dist/mw-voice-assistant-explorer-card.js | head -1 \
+          CUR=$(grep -aoE 'const VERSION = "[0-9]+\.[0-9]+\.[0-9]+"' dist/mw-voice-assistant-explorer-card.js | head -1 \
                 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
           BIG=$(printf '%s\n%s\n' "${NEXT#v}" "$CUR" | sort -V | tail -1)
           echo "dist=$CUR calculada=${NEXT#v} escolhida=$BIG"
@@ -74,7 +74,7 @@ jobs:
           set -euo pipefail
           NEXT=${{ steps.keep.outputs.next }}
           sed -i -E "s/const VERSION = \"[0-9]+\.[0-9]+\.[0-9]+\"/const VERSION = \"${NEXT#v}\"/" dist/mw-voice-assistant-explorer-card.js
-          grep -q "const VERSION = \"${NEXT#v}\"" dist/mw-voice-assistant-explorer-card.js
+          grep -aq "const VERSION = \"${NEXT#v}\"" dist/mw-voice-assistant-explorer-card.js
           node --check dist/mw-voice-assistant-explorer-card.js
           node tools/probe.js
 
